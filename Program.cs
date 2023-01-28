@@ -23,6 +23,7 @@ namespace SnakeAndLadderProblem
                 {
                     PlayerPosition += DieNumber;
                 }
+                //If Die gives 2 and playerPosition goes to every below mentioned intervals there would be a Snake byte to player
                 else if (DieNumber == 2 && PlayerPosition == 12 || PlayerPosition == 22 || PlayerPosition == 34 || PlayerPosition == 44 || PlayerPosition == 74 ||PlayerPosition==84||PlayerPosition==94)
                 {
                     PlayerPosition -= DieNumber;
