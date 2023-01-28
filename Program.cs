@@ -23,7 +23,7 @@ namespace SnakeAndLadderProblem
                 {
                     PlayerPosition += DieNumber;
                 }
-                else if (DieNumber == 2 && (PlayerPosition == 12 || PlayerPosition == 22 || PlayerPosition == 34 || PlayerPosition == 44 || PlayerPosition == 74 ||PlayerPosition==84||PlayerPosition==94))
+                else if (DieNumber == 2 && PlayerPosition == 12 || PlayerPosition == 22 || PlayerPosition == 34 || PlayerPosition == 44 || PlayerPosition == 74 ||PlayerPosition==84||PlayerPosition==94)
                 {
                     PlayerPosition -= DieNumber;
                 }
