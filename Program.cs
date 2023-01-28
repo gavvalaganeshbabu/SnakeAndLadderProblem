@@ -6,7 +6,7 @@ namespace SnakeAndLadderProblem
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Hi Welcome to Snake And Ladder Game :");
         }
     }
 }
