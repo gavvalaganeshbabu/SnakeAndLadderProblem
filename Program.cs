@@ -16,8 +16,6 @@ namespace SnakeAndLadderProblem
             Console.WriteLine("Please Roll The Die :");
             int StartPosition = 0;
             int PlayerPosition = 0;
-            int gotLadderPosition = 0;
-            int ByteSnakePosition = 0;
             Random rnd = new Random();
             int DieNumber = rnd.Next(0, 7);
             Console.WriteLine(DieNumber + " is your die number ");
