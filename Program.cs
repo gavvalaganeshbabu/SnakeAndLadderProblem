@@ -17,27 +17,27 @@ namespace SnakeAndLadderProblem
             int PlayerPosition = 0;
             Random rnd = new Random();
             while (PlayerPosition <= 100) 
-            {
-                int DieNumber = rnd.Next(0, 7);
-                if (DieNumber == 0)
-                {
-                    PlayerPosition += DieNumber;
-                }
-                //If Die gives 2 and playerPosition goes to every below mentioned intervals there would be a Snake byte to player
-                else if (DieNumber == 2 && PlayerPosition == 12 || PlayerPosition == 22 || PlayerPosition == 34 || PlayerPosition == 44 || PlayerPosition == 74 ||PlayerPosition==84||PlayerPosition==94)
-                {
-                    PlayerPosition -= DieNumber;
-                }
-                else
-                {
-                    PlayerPosition += DieNumber;
+            {                             
+                    int DieNumber = rnd.Next(0, 7);
+                    int option = rnd.Next(0, 3);
+                    switch (option)
+                    {
+                        case 0:
+                            PlayerPosition+=0;
+                            break;
+                        case 1:
+                        PlayerPosition += DieNumber;
+                            break;
+                        case 2:
+                           PlayerPosition-= DieNumber;
+                            break;
+                    }
+                if (PlayerPosition < 0) { 
+                     PlayerPosition= 0;
+                     Console.WriteLine("Your Position ="+PlayerPosition);
                 }
             }
-            Console.WriteLine("Congratulation You Won The Game ");
-            if (PlayerPosition > 100) { 
-            PlayerPosition= 100;
-            }
-            Console.WriteLine(PlayerPosition);
+            Console.WriteLine(name + "You Won The Game Score = "+PlayerPosition);
         }
     }
 }
