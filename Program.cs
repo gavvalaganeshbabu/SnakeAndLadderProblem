@@ -14,23 +14,26 @@ namespace SnakeAndLadderProblem
             Console.WriteLine("Please Enter your Name  :");
             string name = Console.ReadLine();
             Console.WriteLine("Please Roll The Die :");
-            int StartPosition = 0;
             int PlayerPosition = 0;
             Random rnd = new Random();
             int DieNumber = rnd.Next(0, 7);
             Console.WriteLine(DieNumber + " is your die number ");
-            if (DieNumber == 0)
-            {
-                PlayerPosition += DieNumber;
-                Console.WriteLine("Your Position At " + PlayerPosition);
+            int option =rnd.Next(0, 3);
+            switch (option) {
+                case 0:
+                    Console.WriteLine("No play ");
+                    Console.WriteLine("You are in Position At " + PlayerPosition);
+                    break;
+                case 1:
+                    Console.WriteLine("You Got Ladder :");
+                    Console.WriteLine("You are Position At " + PlayerPosition + DieNumber);
+                    break;
+                case 2:
+                    Console.WriteLine("You caught up with Snake :");
+                    Console.WriteLine("You are Position At " +( PlayerPosition - DieNumber));
+                    break;
             }
-            else if (DieNumber == 2)
-            {
-                Console.WriteLine("Snake Bytes You Comes to Starting Position " + PlayerPosition);
-            }
-            else {
-                Console.WriteLine("You Got ladder position at " + PlayerPosition + DieNumber);
-            }
+
 
         }
     }
