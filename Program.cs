@@ -15,33 +15,35 @@ namespace SnakeAndLadderProblem
             string name = Console.ReadLine();
             Console.WriteLine("Please Roll The Die :");
             int PlayerPosition = 0;
+            int DieCount = 0;
             Random rnd = new Random();
-            int dieCount = 0;
             while (PlayerPosition <= 100)
             {
                 int DieNumber = rnd.Next(0, 7);
-                dieCount++;
-                if (DieNumber == 0)
+                DieCount++;
+                int option = rnd.Next(0, 3);
+                switch (option)
                 {
-
-                    PlayerPosition += DieNumber;
-                    Console.WriteLine(PlayerPosition);
+                    case 0:
+                        PlayerPosition += 0;
+                        Console.WriteLine("Player Position = " + PlayerPosition);
+                        break;
+                    case 1:
+                        PlayerPosition += DieNumber;
+                        Console.WriteLine("Player Position = " + PlayerPosition);
+                        break;
+                    case 2:
+                        PlayerPosition -= DieNumber;
+                        Console.WriteLine("Player Position = " + PlayerPosition);
+                        break;
                 }
-                //If Die gives 2 and playerPosition goes to every below mentioned intervals there would be a Snake byte to player
-                else if (DieNumber == 2 && PlayerPosition == 12 || PlayerPosition == 22 || PlayerPosition == 34 || PlayerPosition == 44 || PlayerPosition == 74 || PlayerPosition == 84 || PlayerPosition == 94)
+                if (PlayerPosition < 0)
                 {
-                    PlayerPosition -= DieNumber;
-                    Console.WriteLine(PlayerPosition);
-                }
-                else
-                {
-                    PlayerPosition += DieNumber;
-                    Console.WriteLine(PlayerPosition);
+                    PlayerPosition = 0;
+                    Console.WriteLine("Your Position =" + PlayerPosition);
                 }
             }
             Console.WriteLine("Congratulation You Won The Game ");
-            Console.WriteLine("Number of Times Die Played ="+dieCount);
-            Console.WriteLine(PlayerPosition);
-        }
-    }
+            Console.WriteLine(DieCount);
+    }   }
 }
