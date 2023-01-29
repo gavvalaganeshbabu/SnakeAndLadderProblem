@@ -44,6 +44,7 @@ namespace SnakeAndLadderProblem
                 }
             }
             Console.WriteLine("Congratulation You Won The Game ");
-            Console.WriteLine(DieCount);
-    }   }
+            Console.WriteLine(DieCount);    
+        }  
+    }
 }
